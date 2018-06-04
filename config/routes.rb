@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   #get 'articulos/new'
-  #get 'articulos/index'
+  get 'articulos/index'
 
   resources :articulos
 
