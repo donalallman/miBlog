@@ -2,6 +2,7 @@ class ArticulosController < ApplicationController
   
   def index
     @articulos = Articulo.all.order("created_at DESC")
+    @boton = "Neuvo"
   end
   
   def new

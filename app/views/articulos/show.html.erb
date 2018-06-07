@@ -2,9 +2,25 @@
 <p>Creado el <%= @articulo.created_at.strftime("%d-%m-%Y") %></p>
 <p><%= @articulo.contenido %></p>
 <br>
-<%= link_to "Editar", edit_articulo_path(@articulo) %>
-<br>
-<%= link_to "Eliminar", @articulo, :method => :delete, data: {confirm: "¿Seguro que quieres eliminar el artículo?"} %>
+
+  <%= link_to "Editar", edit_articulo_path(@articulo), :class => "btn btn-success"  %>
+  <%= link_to "Eliminar", @articulo, :method => :delete, data: {confirm: "¿Seguro que quieres eliminar el artículo?"}, :class => "btn btn-success"  %>
+  <%= link_to "Index", articulos_path(@articulo),:class => "btn btn-success"  %>
+  <br>
+  <br>
+
+  <p><%= @articulo.comentarios.count %> Comentarios</p>
+  <%= render @articulo.comentarios %>
+  <br>
+  <p>Deja tu comentario:</p>
+  <%= render 'comentarios/form' %>
+
+  
+
+
+
+
+
 
 
 
